@@ -1,0 +1,8 @@
+.carDetails{
+
+    padding: 1rem;
+    margin: 1rem 0rem;
+    background-color: rgba(228, 228, 228, 0.404);
+    border-radius: 20px;
+    border: 1px solid red;
+}
