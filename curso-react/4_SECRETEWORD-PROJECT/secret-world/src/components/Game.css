@@ -1,0 +1,62 @@
+
+.gameContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameContainer h3{
+    font-size: 1.4rem;
+}
+
+.gameContainer h1{
+    font-size: 4.5rem;
+    margin-top: 3rem;
+
+}
+
+.gameContainer h2{
+    font-size: 2.25rem;
+    margin-top: 1rem;
+}
+
+.gameContainer p{
+    font-size: 24px;
+}
+
+.gameContainer .yellow{
+    color: yellow;
+}
+
+.wordContainer{
+    margin: 2rem;
+
+    border: 20px solid yellow;
+    padding: 3rem;
+
+}
+
+.wordContainer input{
+    height: 140px;
+    font-size: 6rem;
+    width: 125px;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.75rem;
+    
+}
+
+form input{
+    font-size: 4rem;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+}
+
