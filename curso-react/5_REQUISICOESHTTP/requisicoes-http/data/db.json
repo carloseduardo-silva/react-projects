@@ -1,39 +1,39 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Boné aba reta",
-        "price": 29.9
-      },
-      {
-        "name": "capa de chuva",
-        "price": "16",
-        "id": 2
-      },
-      {
-        "name": "bag gugu",
-        "price": "1000",
-        "id": 3
-      },
-      {
-        "name": "Jaco Pallace",
-        "price": "1256",
-        "id": 4
-      },
-      {
-        "name": "Cadeira Gamer",
-        "price": "250",
-        "id": 5
-      },
-      {
-        "name": "casaco",
-        "price": "12",
-        "id": 6
-      },
-      {
-        "name": "casaco",
-        "price": "1222",
-        "id": 7
-      }
-    ]
-  }
+  "products": [
+    {
+      "name": "capa de chuva",
+      "price": "16",
+      "id": "2"
+    },
+    {
+      "name": "bag gugu",
+      "price": "1000",
+      "id": "3"
+    },
+    {
+      "name": "Cadeira Gamer",
+      "price": "250",
+      "id": "5"
+    },
+    {
+      "name": "casaco",
+      "price": "1222",
+      "id": "7"
+    },
+    {
+      "id": "9",
+      "name": "guarda chuva",
+      "price": "1000"
+    },
+    {
+      "id": "11",
+      "name": "suporte mic",
+      "price": "1120"
+    },
+    {
+      "id": "12",
+      "name": "mochila",
+      "price": "20"
+    }
+  ]
+}

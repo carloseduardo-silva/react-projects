@@ -1,0 +1,19 @@
+{
+    "products": [
+      {
+        "name": "Capa de chuva",
+        "price": "100",
+        "id": "1"
+      },
+      {
+        "name": "Boné Gucci",
+        "price": "1000",
+        "id": "2"
+      },
+      {
+        "name": "Cadeira Gamer",
+        "price": "550",
+        "id": "3"
+      }
+    ]
+  }
