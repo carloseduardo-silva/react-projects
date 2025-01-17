@@ -24,7 +24,7 @@ export const useAuthentication = () => {
 
     const createUser = async (data) =>{
         checkIfIsCancelled()
-
+        setError(null)
         setLoading(true)
 
         try {
@@ -33,22 +33,67 @@ export const useAuthentication = () => {
 
             await updateProfile(user, {displayName: data.displayName})
 
+            setLoading(false)
             return user;
             
         } catch (error) {
             
             console.log(error.message)
+            setError(error.message)
+
+            if(error.message.includes("Password")){
+                setError("A senha precisa conter pelo menos 6 caracteres")
+
+            }
+            else if(error.message.includes("email-already")){
+                setError("E-mail já cadastrado")
+            }
+            else{
+                setError("Ocorreu um erro, por favor tente mais tarde")
+            }
         }
 
         setLoading(false)
 
     }
 
+    const login = async (data) =>{
+        checkIfIsCancelled()
+        setLoading(true)
+        setError(null)
+
+        try {
+
+            await signInWithEmailAndPassword(auth, data.email, data.password)
+            setLoading(false)
+
+        } catch (error) {
+            console.log(error.message)
+            setError(error.message)
+            setLoading(false)
+            if(error.message.includes("invalid-credential")){
+                setError("E-mail ou senha incorreto")
+
+            }
+            else{
+                setError("Ocorreu um erro, por favor tente mais tarde")
+            }
+        }
+
+       
+    }
+
+    const logout = () =>{
+        checkIfIsCancelled()
+
+        signOut(auth)
+
+    }
 
     useEffect(() =>{
         return () => setCancelled(true);
     }, [])
 
- return {auth, createUser, error, loading};
+ return {auth, createUser, error, loading, logout, login};
 };
 

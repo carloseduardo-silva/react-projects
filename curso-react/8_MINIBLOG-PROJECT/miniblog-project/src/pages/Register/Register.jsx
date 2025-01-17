@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 import {useAuthentication} from "../../hooks/useAuthentication"
@@ -15,7 +15,7 @@ export const Register = () => {
 
     const {createUser, error: authError, loading} = useAuthentication()
 
-    const handleFormRegister = (e) =>{
+    const handleFormRegister = async (e) =>{
         e.preventDefault()
 
         const user = {
@@ -30,9 +30,20 @@ export const Register = () => {
         }
 
         //create user function from hook auth requisition
-        console.log(user)
+        const res = await createUser(user)
+
+        console.log(res)
         setError("")
     }
+
+    useEffect(() =>{
+
+        if(authError){
+            setError(authError)
+        }
+
+    }, [authError])
+
 
   return (
     <div className={styles.register}>
@@ -59,7 +70,9 @@ export const Register = () => {
                 <input type="confirmPassword" placeholder='Confirme a sua senha' name="confirmPassword" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
             </label>
 
-            <button className="btn" type='submit'>Criar conta</button>
+           
+            {!loading &&  <button className="btn" type='submit'>Criar conta</button> }
+            {loading &&<button disabled className="btn" type='submit'>Aguarde...</button> }
             {error && <p className="error">{error}</p>}
         </form>
       

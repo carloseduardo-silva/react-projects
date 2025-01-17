@@ -1,8 +1,18 @@
 import React from 'react'
 import styles from "./NavBar.module.css"
 import { NavLink } from 'react-router-dom'
+import { useAuthValue } from '../../context/authContext'
+import { useAuthentication } from '../../hooks/useAuthentication'
+
+
 
 export const NavBar = () => {
+
+  const {user} = useAuthValue();
+
+  const {logout} = useAuthentication()
+
+
   return (
     <nav className={styles.navbar}>
         <NavLink to="/" className={styles.brand}>
@@ -15,9 +25,25 @@ export const NavBar = () => {
 
             <li><NavLink to="/about" className={({isActive}) => {isActive ? styles.active : ""}}>Sobre</NavLink></li>
 
-            <li><NavLink to="/login" className={({isActive}) => {isActive ? styles.active : ""}}>Entrar</NavLink></li>
+           {!user && (
+            <>
+             <li><NavLink to="/login" className={({isActive}) => {isActive ? styles.active : ""}}>Entrar</NavLink></li>
           
-            <li><NavLink to="/register" className={({isActive}) => {isActive ? styles.active : ""}}>Criar Conta </NavLink></li>
+             <li><NavLink to="/register" className={({isActive}) => {isActive ? styles.active : ""}}>Criar Conta </NavLink></li>
+            </>
+            
+           )}
+
+           {user && (<>
+            <li><NavLink to="/dashboard" className={({isActive}) => {isActive ? styles.active : ""}}>Dashboard</NavLink></li>
+          
+            <li><NavLink to="/posts/create" className={({isActive}) => {isActive ? styles.active : ""}}>Novo Post</NavLink></li>
+           
+           </>)}
+
+           {user && (
+            <li><button onClick={() => {logout()}}>Sair</button></li>
+           )}
 
         </ul>
 
