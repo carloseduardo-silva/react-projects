@@ -15,7 +15,7 @@ export const CreatePost = () => {
 
   const {insertDocument, response} = useInsertDocuments("posts")
   const {user} = useAuthValue()
-  const {navigate} = useNavigate()
+  const navigate  = useNavigate()
 
   const handlePostSubmit = (e) =>{
     e.preventDefault()
@@ -90,7 +90,7 @@ export const CreatePost = () => {
 
         {/* <button className="btn" type='submit'>Criar post</button> */}
 
-         {!response.loading &&  <button className="btn" type='submit'>Criar conta</button> }
+         {!response.loading &&  <button className="btn" type='submit'>Criar post</button> }
             {response.loading &&<button disabled className="btn" type='submit'>Aguarde...</button> }
             {(response.error || formError) && <p className="error">{response.error || formError}</p>} 
       </form>

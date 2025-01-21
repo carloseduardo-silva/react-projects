@@ -15,6 +15,7 @@ import { Footer } from './components/Footer/Footer'
 import { Login } from './pages/Login/Login'
 import { CreatePost } from './pages/CreatePost/CreatePost'
 import { Dashboard } from './pages/Dashboard/Dashboard'
+import { Search } from "./pages/Search/Search"
 
 function App() {
   
@@ -46,10 +47,12 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home/>}></Route>
                 <Route path='/about' element={<About/>}></Route>
+                <Route path='/search' element={<Search/>}></Route>
                 <Route path='/login' element={!user ?<Login/> : <Navigate to="/"></Navigate> }></Route>
                 <Route path='/register' element={!user ? <Register/> : <Navigate to="/"></Navigate>}></Route>
                 <Route path='/posts/create' element={user ?  <CreatePost/> :   <Navigate to="/"></Navigate>} ></Route>
                 <Route path="/dashboard" element={user ? <Dashboard/> : <Navigate to="/"></Navigate> }> </Route>
+                
             </Routes>
           </div>
         <Footer/>
