@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./PostDetail.module.css"
+import { Link } from 'react-router-dom'
 
 export const PostDetail = ({post}) => {
   return (
@@ -19,6 +20,10 @@ export const PostDetail = ({post}) => {
             ))}
 
         </div>
+
+        <Link className='btn btn-outline' to={`/posts/${post.id}`}>
+            Ler
+        </Link>
 
 
     </div>

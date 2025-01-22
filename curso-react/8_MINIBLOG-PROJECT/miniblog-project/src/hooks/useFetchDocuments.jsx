@@ -30,6 +30,11 @@ export const useFetchDocuments = (docCollection, search=null, uid=null) => {
                     q = await query(collectionRef, where("tags", "array-contains", search), orderBy("createdAt", "desc"));
 
                 }
+                //if pass the uid, will filter the posts who was created by the user with this uid
+                else if(uid){
+                    q = await query(collectionRef, where("uid", "==", uid), orderBy("createdBy", "desc"));
+                }
+                //no filters
                 else{
                     q = await query(collectionRef, orderBy("createdAt", "desc"));
                 }
