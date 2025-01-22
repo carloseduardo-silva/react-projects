@@ -17,6 +17,7 @@ import { CreatePost } from './pages/CreatePost/CreatePost'
 import { Dashboard } from './pages/Dashboard/Dashboard'
 import { Search } from "./pages/Search/Search"
 import { Post } from "./pages/Post/Post"
+import { Edit } from "./pages/Edit/Edit"
 
 function App() {
   
@@ -50,6 +51,7 @@ function App() {
                 <Route path='/about' element={<About/>}></Route>
                 <Route path='/search' element={<Search/>}></Route>
                 <Route path='/posts/:id' element={<Post/>}></Route>
+                <Route path='/posts/edit/:id' element={<Edit/>}></Route>
                 <Route path='/login' element={!user ?<Login/> : <Navigate to="/"></Navigate> }></Route>
                 <Route path='/register' element={!user ? <Register/> : <Navigate to="/"></Navigate>}></Route>
                 <Route path='/posts/create' element={user ?  <CreatePost/> :   <Navigate to="/"></Navigate>} ></Route>
