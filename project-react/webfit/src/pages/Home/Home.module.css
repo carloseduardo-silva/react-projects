@@ -1,0 +1,8 @@
+.home_container{
+    height: 700px;
+    background-color: var(--light-green);
+}
+
+.home_container h1{
+    margin: 0;
+}
