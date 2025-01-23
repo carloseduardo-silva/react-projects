@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 
-import { useReducer } from 'react'
+import { useReducer, useContext } from 'react'
+import { FutevoleiContext } from '../context/futevoleiContext'
 
 export const HookReducer = () => {
 
@@ -64,12 +65,15 @@ export const HookReducer = () => {
 
     const [taskList, dispatchTaskAction] = useReducer(taskListActionReducer, initialTaskList);
 
+    const {number: numContext, setNumber} = useContext(FutevoleiContext)
+
 
 
   return (
    <>
      <div className='separate'>
         <h2> useReducer</h2>
+        <button onClick={() => setNumber(numContext+7)}>Mudar o numero pelo contexto </button>
         <h3 style={{color:state.color}}>Titulo com cores diferentes, agora esta: {state.color}</h3>
         <div>
             <button style={{color:"red"}} onClick={() => dispatch({type: "red"})}>red</button>

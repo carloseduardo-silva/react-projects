@@ -6,6 +6,8 @@ import './App.css'
 import { Home } from './pages/Home'
 import { About } from './pages/About'
 
+import { FtvContextProvider } from './context/futevoleiContext.jsx'
+
 function App() {
 
 
@@ -13,7 +15,7 @@ function App() {
     <>
      <div className='App'>
       <h1>React Hooks</h1>
-
+      <FtvContextProvider>
       <BrowserRouter>
       <ul>
         <li>
@@ -31,6 +33,7 @@ function App() {
       </Routes>
       
       </BrowserRouter>
+      </FtvContextProvider>
      </div>
     </>
   )
