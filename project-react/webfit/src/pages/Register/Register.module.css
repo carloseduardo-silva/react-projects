@@ -1,0 +1,20 @@
+.register {
+    text-align: center;
+  }
+  
+  .register p {
+    color: #aaa;
+  }
+
+  .register span{
+    margin-top: 1rem;
+  }
+
+  .register h1{
+    margin-top: 3rem;
+  }
+
+  
+  .register button{
+    margin-top: 2rem;
+  }

@@ -14,19 +14,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 700px;
+    max-width: 850px;
     margin: 0 auto;
     text-align: center;
-    padding: 3.5em 2em 3em 2em;
+    padding: 3.7em 2em 3.2em 2em;
 }
 
 .description h4{
     font-size: 3em;
     margin: 0 auto;
+    color: var(--banner-green);
 }
 
 .description p {
-    font-size: 1.5em;
+    font-size: 1.55em;
 }
 
 .banner_secundario{
@@ -34,4 +35,44 @@
     background-image: url("../../assets/banner-secundario.png");
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.bennefits_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bennefits_container h4{
+    font-size: 2.6em;
+    margin: 0 auto;
+    color: var(--banner-green);
+}
+
+.bennefits_container span {
+    font-size: 2.85em;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.card_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6em;
+    gap: 80px;
+    max-width: 1350px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.card h3{
+    margin: 0 auto;
 }
