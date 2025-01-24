@@ -4,6 +4,10 @@
   transition: filter 300ms;
 }
 
+.cursive{
+  font-family: "Kaushan Script" !important;
+  font-weight: 300;
+}
 
 @keyframes logo-spin {
   from {

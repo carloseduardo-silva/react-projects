@@ -5,8 +5,7 @@
     justify-content: space-between;
     gap: 20px;
     flex-direction: row;
-    padding: 1rem 2rem 1.26rem 2rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    padding: 1rem 2rem 1.26rem 2rem;    
     box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.178);
 }
 
@@ -14,12 +13,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .logo_container span{
-    font-size: 2em;
+    font-size: 2.15em;
     margin-top: 2px;
+    font-weight: 600;
+    color: #9fbb62;
+    font-family: "MontSerrat";
+    cursor: pointer;
+
 }
 
 .nav_links{
@@ -27,7 +31,7 @@
     display: flex;
     align-items:center ;
     justify-content: right;
-    gap: 20px;
+    gap: 35px;
     flex-direction: row;
 }
 
@@ -35,9 +39,13 @@
 .nav_container a {
     text-decoration: none;
     color: black;
+    font-weight: 600;
+    font-size:0.95em;
+    font-family: "MontSerrat";
+    letter-spacing: 2px;
 }
 
 .nav_container a:hover{
-    color: var(--normal-green);
+    color: var(--banner-green);
 }
 
