@@ -45,8 +45,8 @@ export const Login = () => {
             </label>
 
 
-            {!loading &&  <button className="btn" type='submit'>Entrar</button> }
-            {loading &&<button disabled className="btn" type='submit'>Aguarde...</button> }
+            {!loading &&  <button className="btn-form" type='submit'>Entrar</button> }
+            {loading &&<button disabled className="btn-form" type='submit'>Aguarde...</button> }
             {error && <p className="error">{error}</p>}
         </form>
     </div>

@@ -21,21 +21,21 @@ export const Home = () => {
       <div className={styles.card_container}>
 
         <div className={styles.card}>
-          <img src="" alt="" />
+          <img src="../../assets/bennefit-dieta.png" alt="" />
           <h3>Dietas Personalizadas</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing repellendus possimus</p>
           <button className='btn-green'>Saiba Mais</button>
         </div>
 
         <div className={styles.card}>
-          <img src="" alt="" />
+          <img src="../../assets/bennefit-sup.png" alt="" />
           <h3>Suplementos</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing repellendus possimus</p>
           <button className='btn-green'>Saiba Mais</button>
         </div>
 
         <div className={styles.card}>
-          <img src="" alt="" />
+          <img src="../../assets/bennefit-imc.png" alt="" />
           <h3>Calculadora IMC</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing repellendus possimus</p>
           <button className='btn-green'>Saiba Mais</button>

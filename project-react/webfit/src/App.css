@@ -18,6 +18,19 @@
   color: white;
 }
 
+.btn-form {
+  background-color: #1a8918;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 120px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1em;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

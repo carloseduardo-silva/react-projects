@@ -62,8 +62,8 @@ export const Register = () => {
             </label>
 
            
-            {!loading &&  <button className="btn" type='submit'>Criar conta</button> }
-            {loading &&<button disabled className="btn" type='submit'>Aguarde...</button> }
+            {!loading &&  <button className="btn-form" type='submit'>Criar conta</button> }
+            {loading &&<button disabled className="btn-form" type='submit'>Aguarde...</button> }
             {error && <p className="error">{error}</p>}
         </form>
       
