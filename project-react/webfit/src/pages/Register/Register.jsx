@@ -30,11 +30,13 @@ export const Register = () => {
 
     const res = await createUser(user)
 
-    useEffect(() =>{
-      setError(authError)
-    }, [authError])
+ 
 
   }
+
+  useEffect(() =>{
+    setError(authError)
+  }, [authError])
 
   return (
     <div className={styles.register}>

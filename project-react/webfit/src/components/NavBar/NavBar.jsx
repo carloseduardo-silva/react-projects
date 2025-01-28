@@ -3,11 +3,20 @@ import styles from "./NavBar.module.css"
 
 
 import { NavLink} from "react-router-dom"
+import { useAuthValue } from '../../context/authContext'
+import { useAuthentication } from '../../hooks/useAuthentication'
 
 
-//importar usuario do contexto -> dependendo se existir user ou não irá exibir um nav
+
+
 
 export const NavBar = () => {
+
+  //importar usuario do contexto -> dependendo se existir user ou não irá exibir um nav
+  const user = useAuthValue()
+  
+  const {logout} = useAuthentication()
+
   return (
    <nav>
      
@@ -19,12 +28,16 @@ export const NavBar = () => {
           </div>
 
         <div className={styles.nav_links}>
-        <NavLink to="/"> HOME </NavLink>
-        <NavLink to="/login"> LOGIN </NavLink>
-        <NavLink to="/register"> REGISTER </NavLink>
-        <NavLink to="/sobre"> ABOUT </NavLink>
-        <NavLink to="/shop"> SHOP </NavLink>
-        <NavLink to="/calculadoraimc"> CALCULADORA IMC</NavLink>
+        <NavLink to="/"> INICIO </NavLink>
+        <NavLink to="/sobre"> SOBRE </NavLink>
+        <NavLink to="/blog"> BLOG </NavLink>
+        {!user && <NavLink to="/login"> ENTRAR </NavLink> }
+        {!user && <NavLink to="/register"> CRIAR CONTA </NavLink> }
+        {user && <NavLink to="/shop"> LOJA </NavLink> }
+        {user && <NavLink to="/calculadoraimc"> CALCULADORA IMC</NavLink>}
+        {user && <a onClick={() => logout()}>SAIR</a>}
+    
+        
       </div>
 
      </div>

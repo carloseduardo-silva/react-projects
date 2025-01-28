@@ -43,6 +43,7 @@
     font-size:0.95em;
     font-family: "MontSerrat";
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 .nav_container a:hover{

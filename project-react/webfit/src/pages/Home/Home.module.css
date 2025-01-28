@@ -1,5 +1,5 @@
 .home_container{
-    height: 45vw;
+    height: 44vw;
     background-image: url("../../assets/banner-home2.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -17,7 +17,7 @@
     max-width: 850px;
     margin: 0 auto;
     text-align: center;
-    padding: 3.7em 2em 3.2em 2em;
+    padding: 4em 2em 3.2em 2em;
 }
 
 .description h4{
@@ -32,9 +32,35 @@
 
 .banner_secundario{
     height: 45vw;
-    background-image: url("../../assets/banner-secundario.png");
+    background-image: url("../../assets/banner-home-secundario.png");
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.about_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 0rem;
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+.aboutDesc_container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 50%;
+}
+
+.aboutImg_container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 50%;
 }
 
 .bennefits_container{
@@ -42,6 +68,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 6rem 0rem;
 }
 
 .bennefits_container h4{
@@ -61,7 +88,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 6em;
+    margin-top: 4em;
     gap: 80px;
     max-width: 1350px;
 }
@@ -76,3 +103,12 @@
 .card h3{
     margin: 0 auto;
 }
+
+.card img{
+    width: 25vw;
+
+}
+
+
+
+
