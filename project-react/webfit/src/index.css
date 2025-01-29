@@ -64,3 +64,9 @@ textarea::placeholder {
   padding: 5px;
   border-radius: 5px;
 }
+
+.result_selected{
+  border: 1px solid var(--banner-green);
+  padding: 1rem;
+  border-radius: 5px;
+}
