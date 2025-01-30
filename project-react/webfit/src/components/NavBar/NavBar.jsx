@@ -34,6 +34,7 @@ export const NavBar = () => {
         {!user && <NavLink to="/login"> ENTRAR </NavLink> }
         {!user && <NavLink to="/register"> CRIAR CONTA </NavLink> }
         {user && <NavLink to="/shop"> LOJA </NavLink> }
+        {user && <NavLink to="/dieta"> DIETA IA</NavLink>}
         {user && <NavLink to="/calculadoraimc"> CALCULADORA IMC</NavLink>}
         {user && <a onClick={() => logout()}>SAIR</a>}
     

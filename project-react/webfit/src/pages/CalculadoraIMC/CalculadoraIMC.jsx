@@ -72,19 +72,25 @@ export const CalculadoraIMC = () => {
         <label htmlFor="typeAge">
           <h3>Selecione:</h3>
           </label>
-          <div className={styles.typeAge_div}>
-            Adulto
-            <input onChange={(e) => setTypeAge("Adulto")} type="radio" name="typeAge" id="typeAge" /> 
-            
-          </div>
-          <span>Acima de 18 anos</span>
 
-          <div className={styles.typeAge_div}>
-            Jovem
-            <input onChange={(e) => setTypeAge("Jovem")} type="radio" name="typeAge" id="typeAge" /> 
+          <div className={styles.options_typeage}>
+            <div>
+              <div className={styles.typeAge_div}>
+                Adulto
+                <input onChange={(e) => setTypeAge("Adulto")} type="radio" name="typeAge" id="typeAge" />
             
+              </div>
+              <span>Acima de 18 anos</span>
+            </div>
+            <div>
+              <div className={styles.typeAge_div}>
+                Jovem
+                <input onChange={(e) => setTypeAge("Jovem")} type="radio" name="typeAge" id="typeAge" />
+            
+              </div>
+              <span>18 anos ou menos</span>
+            </div>
           </div>
-          <span>18 anos ou menos</span>         
        
 
       {
@@ -194,6 +200,7 @@ export const CalculadoraIMC = () => {
         <div>
           <p>Medidas de risco da circunferência abdominal</p>
           <img src="" alt="" />
+          
           </div>
 
       </div>

@@ -9,6 +9,17 @@
 
 .calculadora_container h1{
     color: var(--banner-green);
+    font-size: 40px;
+    margin-bottom: 5rem;
+}
+
+.options_typeage{
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto;
 }
 
 .form_imc{
@@ -31,7 +42,7 @@
 }
 
 .form_imc span{
-    margin-top: -5px;
+    margin: 10px 0px 0px 0px;
     font-size: 14px;
     color: grey;
 }
@@ -45,6 +56,10 @@
     margin: 0px auto;
     width: 70%;
     text-align: center;
+}
+
+.form_container button{
+    margin-top: 20px;
 }
 
 .form_container h3{

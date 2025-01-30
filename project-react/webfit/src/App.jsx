@@ -15,12 +15,14 @@ import {CalculadoraIMC} from "./pages/CalculadoraIMC/CalculadoraIMC"
 import {Sobre} from "./pages/Sobre/Sobre"
 import {NotFound} from "./pages/NotFound/NotFound"
 import { Blog } from './pages/Blog/Blog'
+import { Diet } from './pages/Diet/Diet'
 
 //components
 import { NavBar } from './components/NavBar/NavBar'
 import { useAuthentication } from './hooks/useAuthentication'
 import { useEffect } from 'react'
 import { AuthContextProvider } from './context/authContext'
+
 
 
 function App() {
@@ -56,6 +58,7 @@ function App() {
               <Route path='/login' element={!user ?<Login/> : <Navigate to={"/"}/>}></Route>
               <Route path='/register' element={!user ? <Register/> : <Navigate to={"/"}/>}></Route>
               <Route path='/shop' element={user && <Shop/>}></Route>
+              <Route path='/dieta' element={user && <Diet/>}></Route>
               <Route path='/calculadoraimc' element={user && <CalculadoraIMC/>}></Route>
               <Route path='/sobre' element={<Sobre/>}></Route>
               <Route path='/blog' element={<Blog/>}></Route>

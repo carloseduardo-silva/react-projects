@@ -21,7 +21,7 @@ export const Home = () => {
     <div className={styles.banner_secundario}></div>
 
     
-    <div style={{backgroundColor:"#ededed"}}>
+    <div style={{backgroundColor:"#fafafa"}}>
       <div className={styles.about_container}>
         <div className={styles.aboutDesc_container}>
           <h4 className='cursive'>Conheça nossa Loja</h4>
