@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     max-width: 1350px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .calculadora_container h1{
@@ -20,6 +20,10 @@
     border: 2px solid var(--banner-green);
     border-radius: 20px;
     width: 100%;
+}
+
+.form_imc label{
+    margin-bottom: 5px;
 }
 
 .form_imc h3{
@@ -38,7 +42,7 @@
 }
 
 .form_container{
-    margin: 0 auto;
+    margin: 0px auto;
     width: 70%;
     text-align: center;
 }
@@ -55,7 +59,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-    padding: 3rem;
+    padding: 6rem 3rem;
 }
 
 .result_container h4{

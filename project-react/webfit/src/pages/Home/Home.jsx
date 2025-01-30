@@ -4,6 +4,7 @@ import styles from "./Home.module.css"
 import imcImg from "../../assets/bennefit-imc.png"
 import dietaImg from "../../assets/bennefit-dieta.png"
 import supImg from "../../assets/bennefit-sup.png"
+import shopImg from "../../assets/el-visual.png"
 
 export const Home = () => {
   return (
@@ -20,17 +21,17 @@ export const Home = () => {
     <div className={styles.banner_secundario}></div>
 
     
-    <div style={{backgroundColor:"var(--light-green)"}}>
+    <div style={{backgroundColor:"#ededed"}}>
       <div className={styles.about_container}>
         <div className={styles.aboutDesc_container}>
-          <h4 className='cursive'>Pronto para otimizar seu estilo de vida?</h4>
-          <span>Aqui na WEBFIT nós podemos te auxiliar com</span>
+          <h4 className='cursive'>Conheça nossa Loja</h4>
+          <span>Aqui na WEBFIT nós podemos</span>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse repellendus mollitia incidunt est debitis quaerat omnis cum eaque facere! Laboriosam animi molestiae provident atque voluptatum accusamus quidem tempore quae officia! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex laborum illo blanditiis quae quo architecto eos eum corporis asperiores doloribus, nobis nulla animi, iste nesciunt dolor.</p>
           <button className='btn-green'>Saiba mais</button>
         </div>
 
         <div className={styles.aboutImg_container}>
-          <img src="" alt="" />
+          <img src={shopImg} alt="" />
         </div>
 
 

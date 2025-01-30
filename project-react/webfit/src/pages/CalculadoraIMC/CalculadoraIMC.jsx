@@ -66,9 +66,7 @@ export const CalculadoraIMC = () => {
   }, [typeAge])
 
   return (
-    <div className={styles.calculadora_container}>
-      <h1>Calculadora IMC</h1>
-      
+    <div className={styles.calculadora_container}>     
 
       <form className={styles.form_imc} onSubmit={handleIMCForm}>
         <label htmlFor="typeAge">
