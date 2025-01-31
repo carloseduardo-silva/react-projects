@@ -22,15 +22,8 @@ export const CalculadoraIMC = () => {
     let weightVal = weight.replace(/,/g, '.');
     let heightVal= height.replace(/,/g, '.');
 
-    if(typeAge == "Adulto"){
-
-      imc = (weightVal/heightVal**2).toFixed(2)
+    imc = (weightVal/heightVal**2).toFixed(2)
       
-    }
-    else{
-
-    }
-
     setImcValue(imc)
 
     if(imc > 40.0){
@@ -53,6 +46,35 @@ export const CalculadoraIMC = () => {
     }
   }
 
+  const heightInput = (inputVal) => {
+      // Remove any non-digit characters except for the decimal point
+      let value = inputVal.replace(/[^0-9.]/g, '');
+
+      // If there's more than one decimal point, remove the extra ones
+      const parts = value.split('.');
+      if (parts.length > 2) {
+          value = parts[0] + '.' + parts.slice(1).join('');
+      }
+
+      // Limit to two decimal places
+      if (parts.length > 1) {
+          value = parts[0] + '.' + parts[1].substring(0, 2);
+      }
+
+      // Format the value to have at least one digit before the decimal
+      if (value) {
+          if (!value.includes('.')) {
+              value += '.';
+          }
+          // Ensure there's at least one digit before the decimal
+          if (value.startsWith('.')) {
+              value = '0' + value;
+          }
+      }
+
+      setHeight(value)
+  }
+
   useEffect(() =>{
     setHeight("")
     setWeight("")
@@ -69,11 +91,8 @@ export const CalculadoraIMC = () => {
     <div className={styles.calculadora_container}>     
 
       <form className={styles.form_imc} onSubmit={handleIMCForm}>
-        <label htmlFor="typeAge">
-          <h3>Selecione:</h3>
-          </label>
 
-          <div className={styles.options_typeage}>
+          {/* <div className={styles.options_typeage}>
             <div>
               <div className={styles.typeAge_div}>
                 Adulto
@@ -90,56 +109,34 @@ export const CalculadoraIMC = () => {
               </div>
               <span>18 anos ou menos</span>
             </div>
-          </div>
+          </div> */}
        
 
-      {
-        typeAge ? typeAge == "Adulto" ?    
-        <div className={styles.form_container}>
-        <h3>IMC para {typeAge}</h3>
+      <div className={styles.form_container}>
+        <h3>Calculadora de IMC</h3>
 
         <label htmlFor="weight">
           <span>Peso (kg)</span>
-          <input value={weight} onChange={(e) => setWeight(e.target.value)} type="text" id='weight' placeholder='60.0'/>
+          <input required value={weight} onChange={(e) => setWeight(e.target.value)} type="text" id='weight' placeholder='60.0'/>
         </label>
 
         <label htmlFor="height">
           <span>Altura (m)</span>
-          <input value={height} onChange={(e) => setHeight(e.target.value)} type="text" id='height' placeholder='1.70'/>
+          <input required value={height} onChange={(e) => heightInput(e.target.value)} type="text" id='height' placeholder='1.70'/>
         </label>
         <button className='btn-green' type='submit'>Calcular</button>
-      </div> : 
-         <div className={styles.form_container}>
-         <h3>IMC para {typeAge}</h3>
-
-         <label htmlFor="age">
-           <span>Idade</span>
-           <input value={age} onChange={(e) => setAge(e.target.value)} placeholder='18 anos' type="text" name="age" id="age" min={1} max={18}/>
-         </label>
-
-         <label htmlFor="weight">
-           <span>Peso (kg)</span>
-           <input value={weight} onChange={(e) => setWeight(e.target.value)}  type="text" id='weight' placeholder='60.0'/>
-         </label>
-
-         <label htmlFor="height">
-           <span>Altura (m)</span>
-           <input  value={height} onChange={(e) => setHeight(e.target.value)} type="number" id='height' placeholder='1.70'/>
-         </label>
-         <button className='btn-green' type='submit'>Calcular</button>
-       </div> : ""
-      }
+      </div>
 
 
       </form>
 
 
       <div className={styles.result_container}>
-        <h4>Seu IMC é: <span>{imcValue}</span></h4>
+        <h4>Seu IMC é: <span style={{color:"var(--banner-green)", fontSize:"50px"}}>{imcValue}</span></h4>
         <p>  Como chegamos ao seguinte número: o índice de massa corporal de um adulto é o seu peso em quilos (por exemplo, 80 kg), dividido por sua altura ao quadrado (vamos imaginar, 1,80 m x 1,80 m). </p>
       </div>  
 
-      <div className={styles.desc_result_container}>
+      <div style={{backgroundColor:"#fafafa"}} className={styles.desc_result_container}>
         <h1>Entenda o seu resultado </h1>
         <div className={styles.img_results_container}>
 
@@ -191,15 +188,19 @@ export const CalculadoraIMC = () => {
         </div>
       </div>
 
-      <div className={styles.desc_result_container}>
-        <div>
-          <h3>Gordura na barriga, perigo à vista!</h3>
+      <div className={styles.circunference_container}>
+        <div style={{maxWidth:"650px"}}>
+          <h3 style={{color:"grey", fontSize:"36px", marginTop:"-30px"}}>Gordura na barriga, perigo à vista!</h3>
           <p>Quando a gordura se acumula entre os órgãos do abdômen e aumenta a barriga, é perigosa, sempre merece ser combatida. Este tipo de gordura está por trás de muitos males fatais associados à obesidade. A medida da circunferência abdominal reﬂete de forma indireta o conteúdo de gordura entre os órgãos da região. A Organização Mundial da Saúde estabelece que a medida igual ou superior a 94 cm em homens e 80 cm em mulheres, já aumenta o risco, especialmente, para doenças ligadas ao coração. Eliminar gordura abdominal por meio da redução da ingestão calórica e prática de atividades aeróbicas, como caminhada, bicicleta, corrida, pode trazer muitos benefícios, ao reduzir os riscos de doenças. Mudando hábitos, dá para viver mais e melhor.</p>
         </div>
 
-        <div>
-          <p>Medidas de risco da circunferência abdominal</p>
-          <img src="" alt="" />
+        <div className={styles.flex_row}>
+          <p style={{color:"grey", fontSize:"26px"}}>Medidas de risco da circunferência abdominal</p>
+         
+         <div> <h4 style={{fontSize:"28px", color:"grey"}}>Masculino:<span style={{color:"var(--banner-green)", fontSize:"50px", marginLeft:"10px"}}>94cm</span></h4></div>
+
+         <div> <h4 style={{fontSize:"28px", color:"grey"}}>Feminino:<span style={{color:"var(--banner-green)", fontSize:"50px", marginLeft:"10px"}}>80cm</span></h4></div>
+         
           
           </div>
 
